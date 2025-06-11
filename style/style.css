@@ -5,6 +5,8 @@ html {
 body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
+  color: white;
+  /* background-color: #da6721; */
 }
 
 .container {
@@ -15,6 +17,7 @@ body {
   visibility: hidden;
   position: relative;
   overflow: hidden;
+  background-color: #da6721;
 }
 
 .container div.six {
@@ -48,6 +51,10 @@ body {
   height: auto;
 }
 
+.one .person-name {
+  color: #652718;
+}
+
 .two {
   font-size: 1.2rem;
   font-weight: lighter;
@@ -60,10 +67,13 @@ body {
 .four .text-box {
   width: 600px;
   margin: 0 auto;
-  border: 3px solid #aaa;
+  border: 3px solid white;
   border-radius: 5px;
   padding: 10px;
   position: relative;
+  color: black;
+  background-color: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .text-box p {
@@ -118,16 +128,20 @@ body {
 
 .six img {
   display: inline-block;
-  max-width: 100%;
-  height: auto;
+  max-width: 250px;
+  height: 250px;
+}
+
+.six .lydia-dp {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10%;
 }
 
 .six .hat {
   position: absolute;
-  width: 80px;
-  top: -35px;
-  left: 41.5%;
-  /* transform: scale(0.1); */
+  top: -140px;
+  left: 45%;
+  transform: scale(0.4);
 }
 
 .baloons img {
@@ -222,11 +236,6 @@ body {
   margin: 10px 0 0;
 }
 
-.nine p {
-  font-size: 2rem;
-  font-weight: lighter;
-}
-
 #replay {
   z-index: 3;
   cursor: pointer;
@@ -235,13 +244,13 @@ body {
 /* Media Queries */
 @media screen and (max-height: 1000px) {
   .six .hat {
-    left: 40%;
+    left: 45%;
   }
 }
 
 @media screen and (max-height: 800px) {
   .six .hat {
-    left: 37%;
+    left: 45%;
   }
 }
 
@@ -255,7 +264,7 @@ body {
   .six .hat {
     left: 32%;
   }
-}
+} 
 
 @media screen and (max-width: 500px) {
   .container {
@@ -296,4 +305,8 @@ body {
     font-size: 1.5rem;
     font-weight: lighter;
   }
+}
+
+.container > div:not(.four) {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }

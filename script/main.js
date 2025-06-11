@@ -26,6 +26,10 @@ const fetchData = () => {
 
 // Animation Timeline
 const animationTimeline = () => {
+  // Debug
+  // document.querySelector(".container").style.visibility = "visible";
+  // return;
+
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
@@ -135,7 +139,7 @@ const animationTimeline = () => {
     .to(".idea-3 strong", 0.5, {
       scale: 1.2,
       x: 10,
-      backgroundColor: "rgb(21, 161, 237)",
+      backgroundColor: "#652718",
       color: "#fff"
     })
     .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
