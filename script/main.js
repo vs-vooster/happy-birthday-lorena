@@ -164,6 +164,24 @@ const animationTimeline = () => {
       },
       "+=0.5"
     )
+    .fromTo(
+      ".crown-emoji",
+      0.8,
+      {
+        y: -200,
+        opacity: 0,
+        scale: 0.5,
+        rotation: -45
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        rotation: 0,
+        ease: "bounce.out"
+      },
+      "-=0.5"
+    )
     .to(
       ".idea-5",
       0.7,
