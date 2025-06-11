@@ -51,10 +51,6 @@ body {
   height: auto;
 }
 
-.one .person-name {
-  color: #652718;
-}
-
 .two {
   font-size: 1.2rem;
   font-weight: lighter;
@@ -309,4 +305,13 @@ body {
 
 .container > div:not(.four) {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+[data-node-name = "name"] {
+  text-shadow:
+    -1px -1px 0 #652718, 
+    1px -1px 0 #652718,  
+    -1px 1px 0 #652718,  
+    1px 1px 0 #652718;   
+  color: #fff;
 }

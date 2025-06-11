@@ -11,7 +11,13 @@ const fetchData = () => {
               .querySelector(`[data-node-name*="${customData}"]`)
               .setAttribute("src", data[customData]);
           } else {
-            document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
+            if (customData === "name") {
+              document.querySelectorAll(`[data-node-name*="${customData}"]`).forEach(element => {
+                element.innerHTML = data[customData];
+              });
+            } else {
+              document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
+            }
           }
         }
 
@@ -157,15 +163,6 @@ const animationTimeline = () => {
         opacity: 0
       },
       "+=0.5"
-    )
-    .to(
-      ".idea-5 .smiley",
-      0.7,
-      {
-        rotation: 90,
-        x: 8
-      },
-      "+=0.4"
     )
     .to(
       ".idea-5",
