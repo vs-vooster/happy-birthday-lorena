@@ -16,7 +16,7 @@ const fetchData = () => {
                 element.innerHTML = data[customData];
               });
             } else {
-              document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
+              document.querySelector(`[data-node-name*="${customData}"]`).innerHTML = data[customData];
             }
           }
         }
@@ -301,15 +301,7 @@ const animationTimeline = () => {
       y: 30,
       zIndex: "-1"
     })
-    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
-    .to(
-      ".last-smile",
-      0.5,
-      {
-        rotation: 90
-      },
-      "+=1"
-    );
+    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2);
 
   // tl.seek("currentStep");
   // tl.timeScale(2);
