@@ -111,7 +111,7 @@ body {
 
 .five .crown-emoji {
   position: absolute;
-  opacity: 0;
+  opacity: 1;
   font-size: 1em;
   top: -60px;
   left: 47%;
@@ -125,7 +125,7 @@ body {
 }
 
 .idea-6 span {
-  font-size: 15rem;
+  font-size: 5rem;
 }
 
 .six {
@@ -289,7 +289,8 @@ body {
 
 @media screen and (max-width: 500px) {
   .container {
-    width: 90%;
+    width: 100%;
+    overflow: hidden;
   }
 
   .four .text-box {
@@ -301,17 +302,25 @@ body {
     bottom: -38px;
   }
 
+  .five .crown-emoji {
+  left: 42%;
+  z-index: 10;
+  }
+
   .idea-5 span {
     display: block;
   }
 
   .idea-6 span {
-    font-size: 10rem;
+    font-size: 5rem;
+    position: relative;
+    bottom: 250px;
   }
 
   .six .hat {
-    width: 50px;
-    top: -20px;
+    width: 150px;
+    top: -40%;
+    left: 40%;
   }
 
   .wish-hbd {
@@ -341,6 +350,20 @@ body {
   color: #652718;
 }
 
-.container > div:not(.six) {
-  display: none;
-}
+/* .nine {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/kevin_meme.jpg');
+  background-size: cover;
+  background-position: center 10%;
+  background-repeat: no-repeat;
+} 
+
+.secret-text {
+  background-color: black;
+  position: relative;
+  top: 50%;
+  left: 25%;
+  right: 25%;
+} */
