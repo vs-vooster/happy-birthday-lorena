@@ -340,9 +340,9 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* .container > div:not(.six) {
+body > div:not(.nine) {
   display: none;
-} */
+}
 
 [data-node-name = "name"] {
   text-shadow:
@@ -353,7 +353,7 @@ body {
   color: #652718;
 }
 
-/* .nine {
+.nine {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -361,12 +361,22 @@ body {
   background-size: cover;
   background-position: center 10%;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 } 
 
+.content-wrapper {
+  margin-top: 200px;
+  margin-left: 10%;
+}
+
 .secret-text {
-  background-color: black;
-  position: relative;
-  top: 50%;
-  left: 25%;
-  right: 25%;
-} */
+  font-size: 100px;
+  font-family: "Dancing Script";
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.secret-image {
+  width: 100px;
+}
