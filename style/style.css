@@ -240,6 +240,16 @@ body {
   font-weight: lighter;
   font-size: 2rem;
   margin: 10px 0 0;
+  text-align: center;
+}
+
+.wish h5 span {
+  display: inline;
+}
+
+[data-node-name="highlightedWish"] {
+  background-color: goldenrod;
+  padding: 5px;
 }
 
 #replay {
@@ -329,4 +339,8 @@ body {
     -1px 1px 0 #652718,  
     1px 1px 0 #652718;   
   color: #652718;
+}
+
+.container > div:not(.six) {
+  display: none;
 }

@@ -33,8 +33,8 @@ const fetchData = () => {
 // Animation Timeline
 const animationTimeline = () => {
   // Debug
-  // document.querySelector(".container").style.visibility = "visible";
-  // return;
+  document.querySelector(".container").style.visibility = "visible";
+  return;
 
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];

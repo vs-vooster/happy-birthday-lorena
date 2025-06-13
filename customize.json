@@ -2,7 +2,7 @@
   "greeting": "Olá, ",
   "name": "Lorena",
   "greetingText": "Nossa, que nome lindo! rsrs...",
-  "wishText": "Que você tenha uma ótima vida, com tudo de bom!",
+  "wishText": "Que você tenha uma ótima vida, com ",
   "imagePath": "img/lorena.png",
   "text1": "Que dia lindo, não? Me parece você",
   "textInChatBox": "Feliz Aniversário, Lorena! E blá, blá, blá...",
@@ -14,5 +14,6 @@
   "text5Entry": "Afinal,",
   "text5Content": "é diferente do comum.",
   "bigTextPart": "então...",
-  "wishHeading": "Happy Birthday!"
+  "wishHeading": "Happy Birthday!",
+  "highlightedWish": "tudo de bom"
 }
