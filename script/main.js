@@ -3,6 +3,7 @@ const fetchData = () => {
   fetch("customize.json")
     .then(data => data.json())
     .then(data => {
+      customizeData = data;
       dataArr = Object.keys(data);
       dataArr.map(customData => {
         if (data[customData] !== "") {
@@ -15,7 +16,7 @@ const fetchData = () => {
               document.querySelectorAll(`[data-node-name*="${customData}"]`).forEach(element => {
                 element.innerHTML = data[customData];
               });
-            } else {
+            } else if (customData != "secretBackground") {
               document.querySelector(`[data-node-name*="${customData}"]`).innerHTML = data[customData];
             }
           }
@@ -25,16 +26,59 @@ const fetchData = () => {
         // Run amimation if so
         if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
           animationTimeline();
+          setupSecretContent();
         } 
       });
+    }) .catch(error => console.error("Erro ao processar customize.jsom: ", error));
+};
+
+let customizeData = {};
+
+const setupSecretContent = () => {
+  const highlightedText = document.querySelector('[data-node-name="highlightedWish"]');
+  const backgroundContainer = document.querySelector('.nine');
+  const mainContainer = document.querySelector('.container');
+
+  if (customizeData.secretBackground && backgroundContainer) {
+    backgroundContainer.style.backgroundImage = `url(${customizeData.secretBackground})`;
+  }
+
+  if (highlightedText && backgroundContainer && mainContainer) {
+    highlightedText.addEventListener("click", () => {
+      if (typeof tl !== "undefined" && tl.isActive()) {
+        tl.pause();
+      }
+
+      const revealTimeline = new TimelineMax();
+
+      revealTimeline
+          .to(mainContainer, 0.8, {
+            opacity: 0,
+            ease: Power2.easeOut,
+            onComplete: () => {
+              mainContainer.style.display = "none";
+            }
+          })
+
+          .to(backgroundContainer, 1.2, {
+            opacity: 1,
+            PointerEvents: "auto",
+            ease: Power2.easeIn
+          }, "-=0.5")
+
+          .to(".content-wrapper", 0.8, {
+            opacity: 1,
+            ease: Powe2.easeOut
+          }, "-=0.8")
     });
+  }
 };
 
 // Animation Timeline
 const animationTimeline = () => {
   // Debug
-  document.querySelector(".container").style.visibility = "visible";
-  return;
+  // document.querySelector(".container").style.visibility = "visible";
+  // return;
 
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
@@ -296,21 +340,14 @@ const animationTimeline = () => {
       },
       0.3
     )
-    .to(".six", 0.5, {
+    /* .to(".six", 0.5, {
       opacity: 0,
       y: 30,
       zIndex: "-1"
-    })
-    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2);
+    }) */
 
   // tl.seek("currentStep");
   // tl.timeScale(2);
-
-  // Restart Animation on click
-  const replyBtn = document.getElementById("replay");
-  replyBtn.addEventListener("click", () => {
-    tl.restart();
-  });
 };
 
 // Run fetch and animation in sequence
