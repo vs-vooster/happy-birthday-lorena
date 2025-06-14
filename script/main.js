@@ -39,9 +39,9 @@ const setupSecretContent = () => {
   const backgroundContainer = document.querySelector('.nine');
   const mainContainer = document.querySelector('.container');
 
-  /* if (customizeData.secretBackground && backgroundContainer) {
+  if (customizeData.secretBackground && backgroundContainer) {
     backgroundContainer.style.backgroundImage = `url(${customizeData.secretBackground})`;
-  } */
+  }
 
   if (highlightedText && backgroundContainer && mainContainer) {
     highlightedText.addEventListener("click", () => {
