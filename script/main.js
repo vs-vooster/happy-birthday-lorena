@@ -44,6 +44,7 @@ const setupSecretContent = () => {
   }
 
   if (highlightedText && backgroundContainer && mainContainer) {
+    backgroundContainer.style.opacity = 1;
     highlightedText.addEventListener("click", () => {
       if (typeof tl !== "undefined" && tl.isActive()) {
         tl.pause();
