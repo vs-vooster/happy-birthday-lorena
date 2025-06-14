@@ -39,13 +39,13 @@ const setupSecretContent = () => {
   const backgroundContainer = document.querySelector('.nine');
   const mainContainer = document.querySelector('.container');
 
-  if (customizeData.secretBackground && backgroundContainer) {
+  /* if (customizeData.secretBackground && backgroundContainer) {
     backgroundContainer.style.backgroundImage = `url(${customizeData.secretBackground})`;
-  }
+  } */
 
   if (highlightedText && backgroundContainer && mainContainer) {
-    backgroundContainer.style.opacity = 1;
     highlightedText.addEventListener("click", () => {
+      backgroundContainer.style.opacity = 1;
       if (typeof tl !== "undefined" && tl.isActive()) {
         tl.pause();
       }
@@ -69,7 +69,7 @@ const setupSecretContent = () => {
 
           .to(".content-wrapper", 0.8, {
             opacity: 1,
-            ease: Powe2.easeOut
+            ease: Power2.easeOut
           }, "-=0.8")
     });
   }
