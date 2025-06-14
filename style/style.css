@@ -359,7 +359,7 @@ body {
   height: 100vh;
   opacity: 0;
   pointer-events: none;
-  background-image: url('../img/kevin_meme.jpg');
+  background-image: url('/img/kevin_meme.jpg');
   background-size: cover;
   background-position: center 10%;
   background-repeat: no-repeat;
